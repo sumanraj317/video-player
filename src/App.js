@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useEffect } from 'react';
+import VideoPlayer from './VideoPlayer';
+import VideoCall from './VideoCall';
+import { applyTheme } from './Utils';
 
 function App() {
+  useEffect(() => {
+    const userLocation = "South India"; // Replace with actual location detection logic
+    applyTheme(userLocation);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Video Player</h1>
+      <VideoPlayer />
+      <h2>Video Call</h2>
+      <VideoCall />
     </div>
   );
 }
 
 export default App;
+
+
